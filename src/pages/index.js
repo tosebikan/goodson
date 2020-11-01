@@ -9,7 +9,18 @@ import SEO from "../components/seo";
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <img src={require("../images/hero1.png")} className="home__hero" alt="" />
+    <div className="homeHero__container">
+      <img
+        src={require("../images/hero1.png")}
+        className="home__hero-image"
+        alt=""
+      />
+      <img
+        src={require("../images/hero1.png")}
+        className="home__hero-image"
+        alt=""
+      />
+    </div>
   </Layout>
 );
 
