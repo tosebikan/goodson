@@ -23,20 +23,10 @@ const Header = ({ siteTitle }) => (
 
     <div classname="header__menu">
       <ul>
-        <li>
-          <span class="fas fa-camera"></span>
-          Home
-        </li>
-        <li>
-          <span class="fas fa-camera"></span>
-          Portfolio
-        </li>
-        <li>
-          <span class="fas fa-camera"></span>About
-        </li>
-        <li>
-          <span class="fas fa-camera"></span>Contact
-        </li>
+        <li>Home</li>
+        <li>Portfolio</li>
+        <li>About</li>
+        <li>Contact</li>
       </ul>
     </div>
   </header>

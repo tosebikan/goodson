@@ -35,3 +35,8 @@
 .header-button:active {
   transform: scale(1.2);
 }
+
+.header__menu {
+  padding-top: 50px;
+  color: blue;
+}
