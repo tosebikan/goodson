@@ -1,10 +1,11 @@
 import React from "react";
+import Layout from "../components/layout";
 
 function Contact() {
   return (
-    <div>
+    <Layout>
       <h1> Contact page</h1>
-    </div>
+    </Layout>
   );
 }
 

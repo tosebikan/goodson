@@ -25,14 +25,18 @@ const Footer = () => (
           <p>Portfolio</p>
         </li>
       </Link>
-      <li className="footer__menu-text">
-        <FontAwesomeIcon icon={faInfoCircle} />
-        <p>About</p>
-      </li>
-      <li className="footer__menu-text">
-        <FontAwesomeIcon icon={faAddressCard} />
-        <p>Contact</p>
-      </li>
+      <Link to="/about">
+        <li className="footer__menu-text">
+          <FontAwesomeIcon icon={faInfoCircle} />
+          <p>About</p>
+        </li>
+      </Link>
+      <Link to="/contact">
+        <li className="footer__menu-text">
+          <FontAwesomeIcon icon={faAddressCard} />
+          <p>Contact</p>
+        </li>
+      </Link>
     </ul>
   </footer>
 );
