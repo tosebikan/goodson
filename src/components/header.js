@@ -21,14 +21,14 @@ const Header = ({ siteTitle }) => (
       </div>
     </div>
 
-    <div classname="header__menu">
+    {/*<div classname="header__menu">
       <ul>
         <li>Home</li>
         <li>Portfolio</li>
         <li>About</li>
         <li>Contact</li>
       </ul>
-    </div>
+    </div>*/}
   </header>
 );
 
