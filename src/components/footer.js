@@ -4,7 +4,7 @@ import React from "react";
 import "./footer.css";
 
 const Footer = () => (
-  <footer>
+  <footer className="footer">
     <ul className="footer__menu">
       <li>Home</li>
       <li>Portfolio</li>
