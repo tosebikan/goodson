@@ -31,7 +31,7 @@ const Footer = () => (
           <p>About</p>
         </li>
       </Link>
-      <Link to="/contact">
+      <Link to="/contacts">
         <li className="footer__menu-text">
           <FontAwesomeIcon icon={faAddressCard} />
           <p>Contact</p>

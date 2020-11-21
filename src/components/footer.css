@@ -9,7 +9,7 @@
 
 @media (min-width: 1000px) {
   .footer {
-    display: none;
+    /* display: none; */
   }
 }
 .footer__menu {
