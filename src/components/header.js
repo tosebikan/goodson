@@ -1,9 +1,13 @@
+import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
-import React from "react";
+
 import "./header.css";
+import { apiFunctions } from "../helpers/api";
 
 const Header = ({ siteTitle }) => {
+  const [loading, setLoading] = useState(true);
+  const [categories, setCategories] = useState([]);
   const toggleMenu = () => {
     if (document.querySelector(".header__menu").style.display === "block") {
       document.querySelector(".header__menu").style.display = "none";
@@ -11,6 +15,17 @@ const Header = ({ siteTitle }) => {
       document.querySelector(".header__menu").style.display = "block";
     }
   };
+
+  const fetchCategories = async () => {
+    let cat = await apiFunctions.getCategories();
+    console.log({ cat });
+    setCategories(cat);
+  };
+
+  useEffect(() => {
+    fetchCategories();
+  }, []);
+
   return (
     <header>
       <div className="header">
@@ -31,7 +46,13 @@ const Header = ({ siteTitle }) => {
             <li className="full_sub_container">
               Portfolio
               <ul className="full_sub_menu">
-                <Link to="/portfolio/" state={{ route: "wedding" }}>
+                {categories &&
+                  categories.map((el) => (
+                    <Link to="/portfolio/" state={{ route: el }}>
+                      <li>{el.name}</li>{" "}
+                    </Link>
+                  ))}
+                {/*<Link to="/portfolio/" state={{ route: "wedding" }}>
                   <li>Weddings</li>{" "}
                 </Link>
                 <Link to="/portfolio/" state={{ route: "events" }}>
@@ -45,7 +66,7 @@ const Header = ({ siteTitle }) => {
                 <Link to="/portfolio/" state={{ route: "graduations" }}>
                   {" "}
                   <li>Graduations</li>
-                </Link>
+                </Link>*/}
               </ul>
             </li>
 
