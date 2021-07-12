@@ -28,24 +28,26 @@ const Header = ({ siteTitle }) => {
               <li>Home</li>
             </Link>
 
-            <li>Portfolio</li>
-            <ul className="full_sub_menu">
-              <Link to="/portfolio/" state={{ route: "wedding" }}>
-                <li>Weddings</li>{" "}
-              </Link>
-              <Link to="/portfolio/" state={{ route: "events" }}>
-                {" "}
-                <li>Events</li>
-              </Link>
-              <Link to="/portfolio/" state={{ route: "fashion" }}>
-                {" "}
-                <li>Fashion</li>
-              </Link>
-              <Link to="/portfolio/" state={{ route: "graduations" }}>
-                {" "}
-                <li>Graduations</li>
-              </Link>
-            </ul>
+            <li className="full_sub_container">
+              Portfolio
+              <ul className="full_sub_menu">
+                <Link to="/portfolio/" state={{ route: "wedding" }}>
+                  <li>Weddings</li>{" "}
+                </Link>
+                <Link to="/portfolio/" state={{ route: "events" }}>
+                  {" "}
+                  <li>Events</li>
+                </Link>
+                <Link to="/portfolio/" state={{ route: "fashion" }}>
+                  {" "}
+                  <li>Fashion</li>
+                </Link>
+                <Link to="/portfolio/" state={{ route: "graduations" }}>
+                  {" "}
+                  <li>Graduations</li>
+                </Link>
+              </ul>
+            </li>
 
             <Link to="/about">
               <li>About</li>

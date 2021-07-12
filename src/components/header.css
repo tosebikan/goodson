@@ -35,15 +35,31 @@
   margin: 0 20px;
 }
 
+.full_sub_container {
+  position: relative;
+  transition: 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.full_sub_container:hover .full_sub_menu {
+  display: flex;
+}
+
 .full_sub_menu {
   position: absolute;
-  display: flex;
+  left: 0;
+  display: none;
   flex-direction: column;
   background-color: #0009;
   border-radius: 10px;
+  overflow: hidden;
+  margin: 0;
+  transition: 1s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .full_sub_menu li {
-  /* display: block; */
+  color: #fff;
+}
+.full_sub_menu a:hover {
+  background-color: #0009;
 }
 
 .header-button {
