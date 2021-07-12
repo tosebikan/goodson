@@ -9,7 +9,7 @@
 
 @media (min-width: 1000px) {
   .footer {
-    /* display: none; */
+    display: none;
   }
 }
 .footer__menu {
@@ -17,8 +17,8 @@
   margin: 0;
   flex-direction: row;
   justify-content: space-around;
-  /* background-color: rgba(0, 0, 0, 0.3); */
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.3);
+  /* background-color: #000; */
   backdrop-filter: blur(20px);
   width: 100%;
   /* padding-top: 10px; */
