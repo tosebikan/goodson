@@ -1,6 +1,7 @@
 .portfolio_container {
   /* margin-top: 8%; */
   background-color: #000;
+  min-height: 100vh;
   position: relative;
 }
 
@@ -15,4 +16,40 @@
   justify-content: space-between;
   color: #000;
   z-index: 1;
+}
+
+.portfolio_grid_container {
+  /* margin: 8% 0 0; */
+  padding: 8% 0 0;
+  width: 95vw;
+  /* position: absolute; */
+  /* left: 50%;
+  transform: translateX(-50%); */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 250px);
+  grid-auto-rows: 10px;
+  justify-content: center;
+}
+
+.card {
+  margin: 10px 10px;
+  padding: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: green;
+}
+.portfolio_img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.small {
+  grid-row-end: span 26;
+}
+.medium {
+  grid-row-end: span 33;
+}
+.large {
+  grid-row-end: span 45;
 }

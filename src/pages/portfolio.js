@@ -32,10 +32,31 @@ function Portfolio({ location }) {
   return (
     <Layout>
       <div className="portfolio_container">
-        {images &&
-          images.map((el) => {
-            return <img src={`${endpoint}${el.url}`} alt="" key={el.id} />;
-          })}
+        <div className="portfolio_grid_container">
+          {images &&
+            images.map((el) => {
+              // console.log("IMAGE", el.url, el.height / el.width);
+              let diff = el.height / el.width;
+              let size = "small";
+              if (diff > 1) {
+                size = "large";
+              } else if (diff > 0) {
+                size = "medium";
+              } else {
+                size = "small";
+              }
+              return (
+                <div className={`card ${size}`} key={el.id}>
+                  <img
+                    src={`${endpoint}${el.url}`}
+                    alt=""
+                    key={el.id}
+                    className="portfolio_img"
+                  />
+                </div>
+              );
+            })}
+        </div>
       </div>
     </Layout>
   );
