@@ -48,25 +48,10 @@ const Header = ({ siteTitle }) => {
               <ul className="full_sub_menu">
                 {categories &&
                   categories.map((el) => (
-                    <Link to="/portfolio/" state={{ route: el }}>
+                    <Link to="/portfolio/" state={{ route: el }} key={el.id}>
                       <li>{el.name}</li>{" "}
                     </Link>
                   ))}
-                {/*<Link to="/portfolio/" state={{ route: "wedding" }}>
-                  <li>Weddings</li>{" "}
-                </Link>
-                <Link to="/portfolio/" state={{ route: "events" }}>
-                  {" "}
-                  <li>Events</li>
-                </Link>
-                <Link to="/portfolio/" state={{ route: "fashion" }}>
-                  {" "}
-                  <li>Fashion</li>
-                </Link>
-                <Link to="/portfolio/" state={{ route: "graduations" }}>
-                  {" "}
-                  <li>Graduations</li>
-                </Link>*/}
               </ul>
             </li>
 
