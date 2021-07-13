@@ -7,7 +7,6 @@ function Portfolio({ location }) {
   const [images, setImages] = useState([]);
 
   const data = location.state;
-  console.log({ data });
 
   useEffect(() => {
     updateImages();
@@ -15,24 +14,27 @@ function Portfolio({ location }) {
 
   const updateImages = () => {
     let images = [];
+    let lookup = {};
+    let unique = [];
+
     data && data.route.images.map((el) => images.push(...el.images));
-    let unique = [...new Set(images.map((el) => el.url))];
-    // console.log("unique", unique);
+
+    for (let item of images) {
+      if (!lookup[item.id]) {
+        lookup[item.id] = true;
+        unique.push(item);
+      }
+    }
+
     setImages(unique);
   };
-
-  // console.log({ images });
 
   return (
     <Layout>
       <div className="portfolio_container">
-        <div className="portfolio_info">
-          <h2> {data.route.name}</h2>
-          <p>Share: </p>
-        </div>
         {images &&
           images.map((el) => {
-            return <img src={`${endpoint}${el}`} alt="" key={el.id} />;
+            return <img src={`${endpoint}${el.url}`} alt="" key={el.id} />;
           })}
       </div>
     </Layout>
