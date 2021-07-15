@@ -1,14 +1,26 @@
 import React from "react";
-import { Link } from "gatsby";
 import "./home.css";
 
 import Layout from "../components/layout";
-import Image from "../components/image";
 import SEO from "../components/seo";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+const homeSliderData = [
+  {
+    id: 1,
+    url: require("../images/hero6.jpg"),
+  },
+  {
+    id: 2,
+    url: require("../images/hero5.jpg"),
+  },
+  {
+    id: 3,
+    url: require("../images/hero3.jpg"),
+  },
+];
 const IndexPage = () => {
   const settings = {
     className: "sliderStyle",
@@ -26,27 +38,11 @@ const IndexPage = () => {
       <SEO title="Home" />
       <div className="homeHero__container">
         <Slider {...settings}>
-          <div style={{ backgroundColor: "blue" }}>
-            <img
-              src={require("../images/hero6.jpg")}
-              className="home__hero-image"
-              alt=""
-            />
-          </div>
-          <div style={{ backgroundColor: "blue" }}>
-            <img
-              src={require("../images/hero5.jpg")}
-              className="home__hero-image"
-              alt=""
-            />
-          </div>
-          <div style={{ backgroundColor: "blue" }}>
-            <img
-              src={require("../images/hero3.jpg")}
-              className="home__hero-image"
-              alt=""
-            />
-          </div>
+          {homeSliderData.map((el, index) => (
+            <div style={{ backgroundColor: "blue" }} key={index}>
+              <img src={el.url} className="home__hero-image" alt="" />
+            </div>
+          ))}
         </Slider>
       </div>
     </Layout>
