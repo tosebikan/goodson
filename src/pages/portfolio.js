@@ -5,6 +5,7 @@ import { endpoint } from "../helpers/api";
 
 function Portfolio({ location }) {
   const [images, setImages] = useState([]);
+  const [openModal, setOpenModal] = useState(false);
 
   const data = location.state;
 
@@ -29,10 +30,16 @@ function Portfolio({ location }) {
     setImages(unique);
   };
 
+  const handleClick = () => {
+    setOpenModal(!openModal);
+    console.log({ openModal });
+  };
+
   return (
     <Layout>
       <div className="portfolio_container">
         <div className="portfolio_grid_container">
+          {openModal && <div className="portfolio_modal"></div>}
           {images &&
             images.map((el) => {
               // console.log("IMAGE", el.url, el.height / el.width);
@@ -46,7 +53,11 @@ function Portfolio({ location }) {
                 size = "small";
               }
               return (
-                <div className={`card ${size}`} key={el.id}>
+                <div
+                  className={`card ${size}`}
+                  key={el.id}
+                  onClick={handleClick}
+                >
                   <img
                     src={`${endpoint}${el.url}`}
                     alt=""
@@ -57,6 +68,8 @@ function Portfolio({ location }) {
               );
             })}
         </div>
+
+        {/*PORTSOLIO MODAL SECTION */}
       </div>
     </Layout>
   );
