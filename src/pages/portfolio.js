@@ -1,11 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Layout from "../components/layout";
 import "./portfolio.css";
 import { endpoint } from "../helpers/api";
+import Slider from "react-slick";
 
 function Portfolio({ location }) {
   const [images, setImages] = useState([]);
   const [openModal, setOpenModal] = useState(false);
+  const [slideIndex, setSLideIndex] = useState(0);
+  const [updateCount, setUpdateCount] = useState(0);
+  let sliderRef = useRef();
 
   const data = location.state;
 
@@ -30,16 +34,56 @@ function Portfolio({ location }) {
     setImages(unique);
   };
 
-  const handleClick = () => {
+  const handleClick = (e) => {
     setOpenModal(!openModal);
-    console.log({ openModal });
+    console.log({ sliderRef });
+    // sliderRef.slickGoTo(2);
+  };
+
+  const settings = {
+    className: "portfolio_sliderStyle",
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    pauseOnHover: true,
+    afterChange: () => setUpdateCount((updateCount) => updateCount + 1),
+    beforeChange: (current, next) => setSLideIndex(next),
   };
 
   return (
     <Layout>
       <div className="portfolio_container">
+        {/*PORTSOLIO MODAL SECTION */}
+
         <div className="portfolio_grid_container">
-          {openModal && <div className="portfolio_modal"></div>}
+          {openModal && (
+            <div className="portfolio_modal">
+              <div
+                className="portfolio_modal_close"
+                onClick={() => setOpenModal(!openModal)}
+              >
+                X
+              </div>
+              <div className="portfolio_modal_img_container">
+                <Slider ref={(slider) => (sliderRef = slider)} {...settings}>
+                  {images.map((el, index) => (
+                    <div key={index}>
+                      <img
+                        src={`${endpoint}${el.url}`}
+                        alt=""
+                        className="portfolio_modal_img"
+                      />
+                    </div>
+                  ))}
+                </Slider>
+              </div>
+            </div>
+          )}
           {images &&
             images.map((el) => {
               // console.log("IMAGE", el.url, el.height / el.width);
@@ -56,7 +100,7 @@ function Portfolio({ location }) {
                 <div
                   className={`card ${size}`}
                   key={el.id}
-                  onClick={handleClick}
+                  onClick={(e) => handleClick(e)}
                 >
                   <img
                     src={`${endpoint}${el.url}`}
@@ -68,8 +112,6 @@ function Portfolio({ location }) {
               );
             })}
         </div>
-
-        {/*PORTSOLIO MODAL SECTION */}
       </div>
     </Layout>
   );
