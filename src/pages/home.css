@@ -1,10 +1,26 @@
 .homeHero__container {
-  display: flex;
   height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.sliderStyle {
+  height: 100vh;
+  width: 100vw;
 }
 
 .home__hero-image {
   height: 100vh;
   width: 100vw;
+  margin-bottom: 0;
+  margin-right: 0;
   object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+  .home__hero-image {
+    height: 100vh;
+    width: 100vw;
+    object-fit: contain;
+  }
 }

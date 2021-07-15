@@ -30,6 +30,7 @@ const Layout = ({ children }) => {
       <div
         style={
           {
+            // backgroundColor: "blue",
             // paddingTop: "8%",
             //   margin: `0 auto`,
             //   maxWidth: 960,
