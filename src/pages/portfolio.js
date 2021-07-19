@@ -69,7 +69,7 @@ function Portfolio({ location }) {
               <div className="portfolio_modal_img_container">
                 <Slider {...settings}>
                   {images.map((el, index) => (
-                    <div key={index} className="portfolio_slider_image_cont">
+                    <div key={index}>
                       <img
                         src={`${endpoint}${el.url}`}
                         alt=""

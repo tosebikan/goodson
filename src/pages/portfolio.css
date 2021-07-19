@@ -120,8 +120,5 @@
   width: 720px;
   height: 500px;
   object-fit: contain;
-}
-
-.portfolio_slider_image_cont {
-  background-color: red;
+  margin: 0 auto;
 }
