@@ -7,9 +7,7 @@ import Slider from "react-slick";
 function Portfolio({ location }) {
   const [images, setImages] = useState([]);
   const [openModal, setOpenModal] = useState(false);
-  const [slideIndex, setSLideIndex] = useState(0);
-  const [updateCount, setUpdateCount] = useState(0);
-  let sliderRef = useRef();
+  const [initialSlide, setInitialSlide] = useState(0);
 
   const data = location.state;
 
@@ -35,9 +33,9 @@ function Portfolio({ location }) {
   };
 
   const handleClick = (e) => {
+    console.log({ e });
+    setInitialSlide(e);
     setOpenModal(!openModal);
-    console.log({ sliderRef });
-    // sliderRef.slickGoTo(2);
   };
 
   const settings = {
@@ -51,8 +49,7 @@ function Portfolio({ location }) {
     autoplay: true,
     autoplaySpeed: 4000,
     pauseOnHover: true,
-    afterChange: () => setUpdateCount((updateCount) => updateCount + 1),
-    beforeChange: (current, next) => setSLideIndex(next),
+    initialSlide: initialSlide,
   };
 
   return (
@@ -70,9 +67,9 @@ function Portfolio({ location }) {
                 X
               </div>
               <div className="portfolio_modal_img_container">
-                <Slider ref={(slider) => (sliderRef = slider)} {...settings}>
+                <Slider {...settings}>
                   {images.map((el, index) => (
-                    <div key={index}>
+                    <div key={index} className="portfolio_slider_image_cont">
                       <img
                         src={`${endpoint}${el.url}`}
                         alt=""
@@ -85,7 +82,7 @@ function Portfolio({ location }) {
             </div>
           )}
           {images &&
-            images.map((el) => {
+            images.map((el, id) => {
               // console.log("IMAGE", el.url, el.height / el.width);
               let diff = el.height / el.width;
               let size = "small";
@@ -100,7 +97,7 @@ function Portfolio({ location }) {
                 <div
                   className={`card ${size}`}
                   key={el.id}
-                  onClick={(e) => handleClick(e)}
+                  onClick={(e) => handleClick(id)}
                 >
                   <img
                     src={`${endpoint}${el.url}`}

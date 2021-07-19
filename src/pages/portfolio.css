@@ -103,7 +103,6 @@
 .portfolio_modal_img_container {
   width: 70%;
   height: 80%;
-
   margin: 0 auto;
 }
 
@@ -121,4 +120,8 @@
   width: 720px;
   height: 500px;
   object-fit: contain;
+}
+
+.portfolio_slider_image_cont {
+  background-color: red;
 }
