@@ -32,11 +32,13 @@ const Header = ({ siteTitle }) => {
     <header>
       <div className="header">
         <div className="brand">
-          <img
-            src={require("../images/goodlogo.png")}
-            alt=""
-            className="logo"
-          />
+          <Link to="/">
+            <img
+              src={require("../images/goodlogo.png")}
+              alt=""
+              className="logo"
+            />
+          </Link>
         </div>
 
         <div>
@@ -90,9 +92,19 @@ const Header = ({ siteTitle }) => {
           <Link to="/">
             <li>Home</li>
           </Link>
-          <Link to="/portfolio/">
-            <li>Portfolio</li>
-          </Link>
+
+          <li>
+            Portfolio
+            <ul className="mobile_sub">
+              {categories &&
+                categories.map((el) => (
+                  <Link to="/portfolio/" state={{ route: el }} key={el.id}>
+                    <li>{el.name}</li>{" "}
+                  </Link>
+                ))}
+            </ul>
+          </li>
+
           <Link to="/about">
             <li>About</li>
           </Link>

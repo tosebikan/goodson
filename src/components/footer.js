@@ -12,7 +12,7 @@ import {
 
 const Footer = () => (
   <footer className="footer">
-    <ul className="footer__menu">
+    {/*<ul className="footer__menu">
       <Link to="/">
         <li className="footer__menu-text">
           <FontAwesomeIcon icon={faHome} />
@@ -37,7 +37,7 @@ const Footer = () => (
           <p>Contact</p>
         </li>
       </Link>
-    </ul>
+    </ul>*/}
   </footer>
 );
 

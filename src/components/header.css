@@ -22,20 +22,14 @@
 .logo {
   width: 40px, auto;
   height: 40px;
+  object-fit: contain;
   margin-bottom: 0;
   margin-left: 40px;
 }
 
 .full_menu {
-  /* padding-top: 10px; */
-  /* margin-bottom: 0 */
-}
-
-.full_menu {
-  /* color: #fff; */
   display: flex;
   flex-direction: row;
-  /* background-color: red; */
   margin-bottom: 0;
 }
 .full_menu li {
@@ -85,14 +79,28 @@
 }
 
 .header_button_cont {
+  display: none;
   position: absolute;
   right: 40px;
-  /* background-color: red; */
+}
+
+@media (max-width: 1024px) {
+  .full_menu {
+    display: none;
+  }
+
+  .header_social_links {
+    margin-right: 100px;
+  }
+
+  .header_button_cont {
+    display: block;
+    position: absolute;
+    right: 40px;
+  }
 }
 
 .header-button {
-  /* background-color: red; */
-  /* display: none; */
   background-color: inherit;
   border: none;
   font-size: 1.5rem;
@@ -107,9 +115,9 @@
 
 .header__menu {
   display: none;
-  position: absolute;
+  position: fixed;
   right: 0;
-  width: 10%;
+  width: 40%;
   border-bottom-left-radius: 20px;
   z-index: 1;
   padding-top: 80px;
@@ -130,4 +138,9 @@
 .header__menu li:hover {
   transform: translateY(-3px);
   cursor: pointer;
+}
+
+.mobile_sub {
+  margin-left: 0;
+  margin-top: 2px;
 }
