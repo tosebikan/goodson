@@ -1,6 +1,7 @@
 import axios from "axios";
 
-export const endpoint = "http://localhost:1337";
+// export const endpoint = "http://localhost:1337";
+export const endpoint = "https://goodson-admin.herokuapp.com";
 
 export const apiFunctions = {
   getImages: async () => get("/images"),

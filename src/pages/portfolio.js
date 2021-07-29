@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Layout from "../components/layout";
 import "./portfolio.css";
 import { endpoint } from "../helpers/api";
@@ -52,6 +52,7 @@ function Portfolio({ location }) {
     initialSlide: initialSlide,
   };
 
+  console.log(images);
   return (
     <Layout>
       <div className="portfolio_container">
@@ -68,15 +69,19 @@ function Portfolio({ location }) {
               </div>
               <div className="portfolio_modal_img_container">
                 <Slider {...settings}>
-                  {images.map((el, index) => (
-                    <div key={index}>
-                      <img
-                        src={`${endpoint}${el.url}`}
-                        alt=""
-                        className="portfolio_modal_img"
-                      />
-                    </div>
-                  ))}
+                  {images.map((el, index) => {
+                    console.log("ELEMENT>>>", el);
+                    return {
+                      /*<div key={index}>
+                        <img
+                          src={el.url}
+                          // src={`${endpoint}${el.url}`}
+                          alt=""
+                          className="portfolio_modal_img"
+                        />
+                      </div>*/
+                    };
+                  })}
                 </Slider>
               </div>
             </div>
