@@ -15,7 +15,7 @@ import {
 import "./contacts.css";
 import Layout from "../components/layout";
 
-import MyMap from "../components/map";
+// import MyMap from "../components/map";
 
 function ContactScreen() {
   const position = [5.629175, -0.076558];
