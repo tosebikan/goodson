@@ -21,6 +21,7 @@ function ContactScreen() {
   const position = [5.629175, -0.076558];
   const [status, setStatus] = useState("");
   const [message, setMessage] = useState("");
+  const [name, setName] = useState("");
 
   // const submitForm = (ev) => {
   //   ev.preventDefault();
@@ -70,9 +71,10 @@ function ContactScreen() {
                       name="name"
                       placeholder="name"
                       required
+                      onChange={(e) => setName(e.target.value)}
                     />
                   </div>
-                  <div className="contact-form-item">
+                  {/*<div className="contact-form-item">
                     <label>Email</label>
                     <input
                       type="email"
@@ -80,7 +82,7 @@ function ContactScreen() {
                       placeholder="email"
                       required
                     />
-                  </div>
+                  </div>*/}
                 </div>
 
                 <div className="contact-message-item">
@@ -93,7 +95,9 @@ function ContactScreen() {
                   />
                 </div>
 
-                <a href={`mailto:goodson50.co@gmail.com?body=${message}`}>
+                <a
+                  href={`mailto:goodson50.co@gmail.com?subject=${name}&body=${message}`}
+                >
                   <button className="feature-button">Send Message</button>
                 </a>
 
@@ -112,7 +116,7 @@ function ContactScreen() {
           <p>You can react us via the following mediums</p>
         </div>
         <div className="contact-info-section">
-          <div className="contact-info-group">
+          {/*<div className="contact-info-group">
             <div className="contact-info-item">
               <FontAwesomeIcon
                 icon={faLocationArrow}
@@ -121,7 +125,7 @@ function ContactScreen() {
               <p>Address</p>
             </div>
             <p className="contact-info-bottom">18 Junction Spintex, Accra</p>
-          </div>
+          </div>*/}
           <div className="contact-info-group">
             <div className="contact-info-item">
               <FontAwesomeIcon icon={faPhone} className="contact-icon" />
