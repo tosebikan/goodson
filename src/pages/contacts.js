@@ -20,29 +20,31 @@ import Layout from "../components/layout";
 function ContactScreen() {
   const position = [5.629175, -0.076558];
   const [status, setStatus] = useState("");
+  const [message, setMessage] = useState("");
 
-  const submitForm = (ev) => {
-    ev.preventDefault();
-    const form = ev.target;
-    const data = new FormData(form);
-    const xhr = new XMLHttpRequest();
-    xhr.open(form.method, form.action);
-    xhr.setRequestHeader("Accept", "application/json");
-    xhr.onreadystatechange = () => {
-      if (xhr.readyState !== XMLHttpRequest.DONE) return;
-      if (xhr.status === 200) {
-        form.reset();
-        setStatus("SUCCESS");
-      } else {
-        setStatus("ERROR");
-      }
-    };
-    xhr.send(data);
-  };
+  // const submitForm = (ev) => {
+  //   ev.preventDefault();
+  //   const form = ev.target;
+  //   const data = new FormData(form);
+  //   const xhr = new XMLHttpRequest();
+  //   xhr.open(form.method, form.action);
+  //   xhr.setRequestHeader("Accept", "application/json");
+  //   xhr.onreadystatechange = () => {
+  //     if (xhr.readyState !== XMLHttpRequest.DONE) return;
+  //     if (xhr.status === 200) {
+  //       form.reset();
+  //       setStatus("SUCCESS");
+  //     } else {
+  //       setStatus("ERROR");
+  //     }
+  //   };
+  //   xhr.send(data);
+  // };
+
   return (
     <Layout>
       <div className="contact-container">
-        <div style={{ paddingTop: 50 }}>
+        <div style={{ paddingTop: 90 }}>
           <h1>Contact</h1>
           <div className="contact-top">
             {/*<div className="map-container">
@@ -53,12 +55,12 @@ function ContactScreen() {
             />
           </div>*/}
             <div className="contact-form-container">
-              <p className="form-title">Leave us a message</p>
+              <p className="form-title">Leave a message</p>
               <form
                 className="contact-form"
-                onSubmit={submitForm}
-                action="https://formspree.io/myynqvwo"
-                method="POST"
+                // onSubmit={handleSubmit}
+                // action="https://formspree.io/myynqvwo"
+                // method="POST"
               >
                 <div className="contact-form-top-section">
                   <div className="contact-form-item">
@@ -83,14 +85,23 @@ function ContactScreen() {
 
                 <div className="contact-message-item">
                   <label>Message</label>
-                  <textarea name="message" placeholder="message" required />
+                  <textarea
+                    name="message"
+                    placeholder="message"
+                    required
+                    onChange={(e) => setMessage(e.target.value)}
+                  />
                 </div>
 
-                {status === "SUCCESS" ? (
+                <a href={`mailto:goodson50.co@gmail.com?body=${message}`}>
+                  <button className="feature-button">Send Message</button>
+                </a>
+
+                {/*status === "SUCCESS" ? (
                   <p>Thanks!</p>
                 ) : (
                   <button className="feature-button">Send Message</button>
-                )}
+                )*/}
                 {status === "ERROR" && <p>Ooops! There was an error.</p>}
               </form>
             </div>
