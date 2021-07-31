@@ -70,17 +70,16 @@ function Portfolio({ location }) {
               <div className="portfolio_modal_img_container">
                 <Slider {...settings}>
                   {images.map((el, index) => {
-                    console.log("ELEMENT>>>", el);
-                    return {
-                      /*<div key={index}>
+                    return (
+                      <div key={index}>
                         <img
                           src={el.url}
                           // src={`${endpoint}${el.url}`}
                           alt=""
                           className="portfolio_modal_img"
                         />
-                      </div>*/
-                    };
+                      </div>
+                    );
                   })}
                 </Slider>
               </div>
@@ -105,7 +104,7 @@ function Portfolio({ location }) {
                   onClick={(e) => handleClick(id)}
                 >
                   <img
-                    src={`${endpoint}${el.url}`}
+                    src={el.url}
                     alt=""
                     key={el.id}
                     className="portfolio_img"
