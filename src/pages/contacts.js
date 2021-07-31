@@ -95,19 +95,13 @@ function ContactScreen() {
                   />
                 </div>
 
-                <a
-                  href={`mailto:goodson50.co@gmail.com?subject=${name}&body=${message}`}
-                >
-                  <button className="feature-button">Send Message</button>
-                </a>
-
-                {/*status === "SUCCESS" ? (
-                  <p>Thanks!</p>
-                ) : (
-                  <button className="feature-button">Send Message</button>
-                )*/}
                 {status === "ERROR" && <p>Ooops! There was an error.</p>}
               </form>
+              <a
+                href={`mailto:goodson50.co@gmail.com?subject=${name} Goodson website*&body=${message}`}
+              >
+                <button className="feature-button">Send Message</button>
+              </a>
             </div>
           </div>
         </div>

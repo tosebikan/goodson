@@ -98,13 +98,14 @@
 .contact-info-section {
   display: flex;
   flex-direction: column;
+  margin-bottom: 100px;
 }
 
 .contact-info-item {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 .contact-info-item p {
   margin-bottom: 0;
@@ -160,7 +161,7 @@
   .contact-info-section {
     padding: 20px;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
   }
 }
@@ -169,7 +170,8 @@
   width: 150px;
   border-radius: 20px;
   border: none;
-  margin-top: 20px;
+  /* margin-top: 20px; */
+  margin-bottom: 20px;
   color: #000;
   transition: 1s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
