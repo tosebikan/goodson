@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faLocationArrow,
+  // faLocationArrow,
   faPhone,
   faEnvelope,
   faHeart,
@@ -18,8 +18,8 @@ import Layout from "../components/layout";
 // import MyMap from "../components/map";
 
 function ContactScreen() {
-  const position = [5.629175, -0.076558];
-  const [status, setStatus] = useState("");
+  // const position = [5.629175, -0.076558];
+  // const [status, setStatus] = useState("");
   const [message, setMessage] = useState("");
   const [name, setName] = useState("");
 
@@ -94,8 +94,6 @@ function ContactScreen() {
                     onChange={(e) => setMessage(e.target.value)}
                   />
                 </div>
-
-                {status === "ERROR" && <p>Ooops! There was an error.</p>}
               </form>
               <a
                 href={`mailto:goodson50.co@gmail.com?subject=${name} Goodson website*&body=${message}`}
