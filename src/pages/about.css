@@ -31,26 +31,26 @@
   color: #fff;
 }
 
+.about-icon {
+  color: #fff;
+  margin-right: 10px;
+  transition: 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.about-icon:hover {
+  color: #fff;
+  transform: scale(1.5);
+}
+
+.about_left {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (max-width: 1024px) {
-  .about-icon {
-    color: #fff;
-    margin-right: 10px;
-    transition: 1s cubic-bezier(0.2, 0.8, 0.2, 1);
-  }
-
-  .about-icon:hover {
-    color: #fff;
-    transform: scale(1.5);
-  }
-
-  .about_left {
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
   .about_group {
     width: 80%;
     height: 70%;
