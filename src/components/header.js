@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
-import { faInstagram, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "./header.css";
 import { apiFunctions } from "../helpers/api";
 
 const Header = ({ siteTitle }) => {
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
   const [categories, setCategories] = useState([]);
   const toggleMenu = () => {
     if (document.querySelector(".header__menu").style.display === "block") {
@@ -20,7 +20,6 @@ const Header = ({ siteTitle }) => {
 
   const fetchCategories = async () => {
     let cat = await apiFunctions.getCategories();
-    console.log({ cat });
     setCategories(cat);
   };
 
@@ -69,15 +68,18 @@ const Header = ({ siteTitle }) => {
         </div>
 
         <div className="header_social_links">
-          <Link to="/about">
-            <FontAwesomeIcon icon={faTwitter} className="header-contact-icon" />
-          </Link>
-          <Link to="/contacts">
+          <a href="https://www.instagram.com/good_so_n/" targte="_blank">
             <FontAwesomeIcon
               icon={faInstagram}
               className="header-contact-icon"
             />
-          </Link>
+          </a>
+          {/*<Link to="/contacts">
+            <FontAwesomeIcon
+              icon={faInstagram}
+              className="header-contact-icon"
+            />
+          </Link>*/}
         </div>
 
         <div className="header_button_cont">

@@ -10,16 +10,28 @@ import "slick-carousel/slick/slick-theme.css";
 const homeSliderData = [
   {
     id: 1,
-    url: require("../images/hero6.jpg"),
+    url: require("../images/hero8.jpeg"),
   },
   {
     id: 2,
-    url: require("../images/hero5.jpg"),
+    url: require("../images/hero9.jpeg"),
   },
   {
     id: 3,
-    url: require("../images/hero3.jpg"),
+    url: require("../images/hero10.jpeg"),
   },
+  // {
+  //   id: 1,
+  //   url: require("../images/hero6.jpg"),
+  // },
+  // {
+  //   id: 2,
+  //   url: require("../images/hero5.jpg"),
+  // },
+  // {
+  //   id: 3,
+  //   url: require("../images/hero3.jpg"),
+  // },
 ];
 const IndexPage = () => {
   const settings = {
