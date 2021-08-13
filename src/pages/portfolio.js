@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../components/layout";
 import "./portfolio.css";
-import { endpoint } from "../helpers/api";
 import Slider from "react-slick";
 
 function Portfolio({ location }) {
@@ -33,7 +32,6 @@ function Portfolio({ location }) {
   };
 
   const handleClick = (e) => {
-    console.log({ e });
     setInitialSlide(e);
     setOpenModal(!openModal);
   };
@@ -52,7 +50,6 @@ function Portfolio({ location }) {
     initialSlide: initialSlide,
   };
 
-  console.log(images);
   return (
     <Layout>
       <div className="portfolio_container">
@@ -74,7 +71,6 @@ function Portfolio({ location }) {
                       <div key={index}>
                         <img
                           src={el.url}
-                          // src={`${endpoint}${el.url}`}
                           alt=""
                           className="portfolio_modal_img"
                         />
