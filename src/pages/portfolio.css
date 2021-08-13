@@ -29,6 +29,7 @@
   grid-template-columns: repeat(auto-fill, 250px);
   grid-auto-rows: 10px;
   justify-content: center;
+  outline: none;
   /* position: relative; */
 }
 
@@ -79,10 +80,12 @@
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0, 0, 0); /* Fallback color */
   background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+  outline: none;
 }
 
 .portfolio_modal_close {
   position: absolute;
+  z-index: 9;
   top: 80px;
   right: 40px;
   height: 30px;
@@ -101,24 +104,33 @@
 }
 
 .portfolio_modal_img_container {
-  width: 70%;
-  height: 80%;
+  width: 80%;
+  height: 95%;
   margin: 0 auto;
+  outline: none;
+}
+
+@media (max-width: 1024px) {
+  .portfolio_modal_img_container {
+    width: 95%;
+    height: 80vh;
+    margin: 0 auto;
+    outline: none;
+    background-color: yellow;
+  }
 }
 
 .portfolio_sliderStyle {
   height: 100%;
   width: 100%;
+  outline: none;
 }
 
-.portfolio_image_container {
-  background-color: black;
-  height: 50%;
-  width: 100%;
-}
 .portfolio_modal_img {
-  width: 720px;
-  height: 500px;
+  width: 80vw;
+  height: 80vh;
   object-fit: contain;
   margin: 0 auto;
+  outline: none;
+  background-color: blue;
 }
