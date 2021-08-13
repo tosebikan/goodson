@@ -15,7 +15,7 @@
   width: 100vw;
   margin-bottom: 0;
   margin-right: 0;
-  object-fit: cover;
+  object-fit: contain;
   object-position: top center;
   outline: none;
 }
@@ -24,7 +24,7 @@
   .home__hero-image {
     height: 100vh;
     width: 100vw;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
   }
 }
