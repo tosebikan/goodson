@@ -146,7 +146,13 @@ function ContactScreen() {
               <p>social links</p>
             </div>
             <div>
-              <FontAwesomeIcon
+              <a href="https://www.instagram.com/good_so_n/" targtet="_blank">
+                <FontAwesomeIcon
+                  icon={faInstagram}
+                  className="social-contact-icon"
+                />
+              </a>
+              {/*<FontAwesomeIcon
                 icon={faInstagram}
                 className="social-contact-icon"
               />
@@ -161,7 +167,7 @@ function ContactScreen() {
               <FontAwesomeIcon
                 icon={faWhatsapp}
                 className="social-contact-icon"
-              />
+              />*/}
             </div>
           </div>
         </div>
