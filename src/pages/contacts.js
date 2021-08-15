@@ -146,7 +146,11 @@ function ContactScreen() {
               <p>social links</p>
             </div>
             <div>
-              <a href="https://www.instagram.com/good_so_n/" targtet="_blank">
+              <a
+                href="https://www.instagram.com/good_so_n/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FontAwesomeIcon
                   icon={faInstagram}
                   className="social-contact-icon"

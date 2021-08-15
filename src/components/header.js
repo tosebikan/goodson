@@ -68,7 +68,11 @@ const Header = ({ siteTitle }) => {
         </div>
 
         <div className="header_social_links">
-          <a href="https://www.instagram.com/good_so_n/" targte="_blank">
+          <a
+            href="https://www.instagram.com/good_so_n/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FontAwesomeIcon
               icon={faInstagram}
               className="header-contact-icon"
