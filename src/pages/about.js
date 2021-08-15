@@ -30,10 +30,14 @@ function About() {
 
           <div className="about_right">
             <p>
-              Photography to me is one of the purest forms of art. I enjoy
-              creating through this medium, working with people to bring their
-              visions to life, im easy gooing and my priority is making you as
-              comfortable as you can be while we create your vision
+              Photography to me is one of the purest form of art. I aim to
+              create photographs that stand out in today’s highly competitive
+              market and craft beautiful images that are just as unique as the
+              people in the photographs.
+            </p>
+            <p>
+              “Sometimes you will never know the value of a moment until it
+              becomes a memory”.
             </p>
           </div>
         </div>
