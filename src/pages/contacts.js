@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   // faLocationArrow,
-  faPhone,
+  // faPhone,
   faEnvelope,
   faHeart,
 } from "@fortawesome/free-solid-svg-icons";
 import {
-  faFacebook,
+  // faFacebook,
   faInstagram,
-  faWhatsapp,
-  faTwitter,
+  // faWhatsapp,
+  // faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import "./contacts.css";
 import Layout from "../components/layout";
