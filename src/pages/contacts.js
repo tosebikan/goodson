@@ -118,7 +118,7 @@ function ContactScreen() {
             </div>
             <p className="contact-info-bottom">18 Junction Spintex, Accra</p>
           </div>*/}
-          <div className="contact-info-group">
+          {/*<div className="contact-info-group">
             <div className="contact-info-item">
               <FontAwesomeIcon icon={faPhone} className="contact-icon" />
               <p>Call Us</p>
@@ -128,7 +128,7 @@ function ContactScreen() {
                 <button className="feature-button">+1 (929) 413-2786</button>
               </a>
             </div>
-          </div>
+          </div>*/}
           <div className="contact-info-group">
             <div className="contact-info-item">
               <FontAwesomeIcon icon={faEnvelope} className="contact-icon" />
